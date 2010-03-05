@@ -2,14 +2,14 @@
 oofilter
 ********************
 
-To put an OpenOffice Spreadsheet under version control, it is more 
-efficient to use the Flat XML format instead of the binary ODF 
-format. It is then easier to see the diff between two versions, and the
+To put an OpenOffice Spreadsheet document under version control, it is more 
+efficient to use the Flat XML format instead of the binary ODF format. 
+Namely it is easier to see the diff between two versions, and the
 version control software can store only the diffs between successive
 versions instead of the full binaries.
 
 However the OpenOffice Spreadsheet Flat XML format records every cell value, 
-even those which are computed using a formula from other cell values. 
+even those which are computed from other cell values with a formula.  
 Therefore a single cell modification usually results in a large portion of 
 the file being modified.
 
