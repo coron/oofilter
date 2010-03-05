@@ -16,7 +16,8 @@ the file being modified.
 Here we provide a simple XML Filter that removes in the stored document 
 those cell values which can be derived from a formula. Using this filter 
 when a cell value gets modified, only this single modification will 
-appear in the diff.
+appear in the diff. We also remove the timestamp and cursor position to 
+avoid artificial diffs.
 
 Two installation methods:
 
