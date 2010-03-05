@@ -1,0 +1,34 @@
+********************
+oofilter
+********************
+
+To put an OpenOffice Spreadsheet under version control, it is more 
+efficient to use the Flat XML format instead of the binary ODF 
+format. It is then easier to see the diff between two versions, and the
+version control software can store only the diffs between successive
+versions instead of the full binaries.
+
+However the OpenOffice Spreadsheet Flat XML format records every cell value, 
+even those which are computed using a formula from other cell values. 
+Therefore a single cell modification usually results in a large portion of 
+the file being modified.
+
+Here we provide a simple XML Filter that removes in the stored document 
+those cell values which can be derived from a formula. Using this filter 
+when a cell value gets modified, only this single modification will 
+appear in the diff.
+
+Two installation methods:
+
+1) Installation from package (easier)
+In OpenOffice Spreadsheet, simply go to 
+Tools => XML Filter Settings => Open Package and install the
+oospreadsheetvc.jar file.
+
+2) Installation from xsl file
+Copy the odfflatxmlnovalueexport.xsl file somewhere. 
+This is the XML filter file. 
+To install it in OpenOffice Spreadsheet go to Tools => XML Filter Settings.
+Create a new filter with the same content as the existing 
+"OpenDocument Spreadsheet Flat XML" filter. Replace the "XSLT for export" 
+field with the .xsl file above.
